@@ -1,0 +1,198 @@
+O sistema de Acc consiste em:
+
+Logar no sistema. Para efetuar login você escolhe o tipo de usuário que você é: docente ou aluno
+
+CASO FOR ALUNO:
+
+- RA Aluno
+- nome do aluno
+- nome de seu curso
+- semestre em que está cursando
+- descrição curta do curso
+- opção de formulário para enviar documentaçao de atividade realizada.
+{
+	- aluno pode enviar um formulário ou mais
+	- cada atividade enviada ficará em uma lista de espera com status de: aguardando, negado ou aprovado
+}
+
+FORMULÁRIO
+	> Instituição / Organização
+	> Atividade Desenvolvida
+	> Carga Horária Realizada
+
+- lista de formulários enviados
+lista com todos os formulários enviados pelo aluno ( histórico ) 
+{
+	AGUARDANDO: 
+	APROVADO: automaticamente as horas serão contabilizadas na lista de ACC
+		- comentário
+	NEGADO: o envio fica retido para que o aluno o corrija e reenvie para nova validação
+		- comentário
+}
+
+	GERENCIAR SENHA
+	{
+		- aluno gerencia senha
+	}
+
+consultar accs realizadas
+{
+	
+	nesta tela contém 2 barras de progresso:
+		- hora exigida pelo curso
+		- hora real cumprida pelo aluno
+
+	nome atividade > descrição longa > horas cumprida > hora máxima
+		- hora cumprida parcial > comprovante
+
+	gerar relatório
+	- envia por e-mail
+	- imprime
+	- gera arquivo pdf
+
+}
+
+	- TICKET
+	{
+		- mensagem
+			> o aluno poderá enviar uma mensagem com alguma solicitação de informação/alteração/sugestão/melhoria
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CASO FOR AVALIADOR:
+
+- tela de formulários pendentes
+{
+	- filtrar por curso, semestres, data, disciplina
+
+	- APROVAR atividade 
+		- corrigir quantidade de horas inseridas
+		- destinar a qual acc a atividade informada corresponde
+	- NEGAR atividade
+		- deixar observação sobre a negação
+}
+
+	SISTEMA DE VALIDAÇÃO DE FORMULARIOS:
+
+	{
+
+	- O formulário é recebido; //nele contém:
+		> INSTITUIÇÃO / ORGANIZAÇÃO
+		> ATIVIDADE DESENVOLVIDA
+		> C. HORÁRIA REALIZADA
+
+		O que será editável:
+		> ATIVIDADE QUADRO DE ACC
+		> C. HORÁRIA COMPUTADA
+
+	{
+	
+	No ato de aprovar o formulário recebido, o AVALIADOR
+		- confere
+		- edita
+		- confirma
+						as horas de atividade que serão contabilizadas pelo aluno. 
+						As horas reais inseridas pelo aluno serão contabilizadas 
+						como horas reais da atividade realizada por ele.  ////////
+	}
+
+
+	TICKET
+	{
+		O avaliador recebe tickets enviados pelos alunos
+			- Sistema de Status			
+				> ticket pendente
+				> ticket resolvido
+	}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CASO FOR DIREÇÃO
+
+- ALUNO
+	{
+	- consultar aluno
+	- imprimir relatório sobre aluno
+	- direção pode editar horas de acc realizadass pelo aluno
+	- direção pode editar data de acc realizadass pelo aluno
+	}
+
+- curso
+	{
+	gerenciar curso
+		- adicionar
+			> cod
+			> nome
+			> descrição longa
+			> disciplinas
+			> carga horária da disciplina (exibir carga horária cursada no painel do ALUNO)
+			> carga horária de ACC da disciplina
+			> quais ACC's serão relacionados a este curso
+				> definir horário min e max de cada acc vinculado
+		- editar
+			> editar todos os itens que estão em adicionar
+		- excluir
+	}
+
+- disciplina
+	{
+	gerenciar disciplina
+		- adicionar
+			> cod
+			> nome disciplina
+			> descrição longa
+		- editar			
+			> editar todos os itens que estão em adicionar
+
+		- excluir
+	}
+
+- semestre
+	{
+	gerenciar semestre
+		- adicionar
+			> cod
+			> número
+		- editar
+			> editar todos os itens que estão em adicionar		
+		- excluir
+	}
+
+- ACC
+	{
+	gerenciar ACC
+		- adicionar
+			> cod
+			> desc curta
+			> desc longa
+		- editar
+			> editar todos os itens que estão em adicionar		
+		- excluir
+	}
+- hora x acc x curso
+	{
+	gerenciar hora x acc x curso
+		- editar
+			> push atividade de acc
+			> seleciona cursos que podem cumprir tal atividade de acc
+			> define quantidade mínima de horas que pode ser cumprida
+			> define quantidade máxima de horas que o aluno pode cumprir
+	}
+- certificado
+	{
+	gerenciar certificado
+		- adicionar
+		 	> tipo de certificado
+		 	> selecionar curso
+		 	> selecionar disciplina
+		 	> descrição da atividade realizada
+		 	> selecionar turma
+		 	> selecionar alunos
+		- editar
+			> editar todos os itens que estão em adicionar
+		- excluir
+	}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
