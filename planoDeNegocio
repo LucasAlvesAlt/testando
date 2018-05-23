@@ -125,7 +125,8 @@ CASO FOR DIREÇÃO
 			> cod
 			> nome
 			> descrição longa
-			> disciplinas
+			> semetres
+			> disciplinas 
 			> carga horária da disciplina (exibir carga horária cursada no painel do ALUNO)
 			> carga horária de ACC da disciplina
 			> quais ACC's serão relacionados a este curso
@@ -145,17 +146,6 @@ CASO FOR DIREÇÃO
 		- editar			
 			> editar todos os itens que estão em adicionar
 
-		- excluir
-	}
-
-- semestre
-	{
-	gerenciar semestre
-		- adicionar
-			> cod
-			> número
-		- editar
-			> editar todos os itens que estão em adicionar		
 		- excluir
 	}
 
